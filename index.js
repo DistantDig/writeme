@@ -58,19 +58,13 @@ const questions = [
         message: 'How would you like others to test your project?',
         name: 'testing',
         default: 'Testing guide here.'
-    },
-    {
-        type: 'confirm',
-        message: 'Would you like to include a table of contents?',
-        name: 'table-contents',
-        default: true
     }
 ];
 
 // Function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown.generateMarkdown(data), (error) => {
-        error ? console.error(error) : console.log(data);
+        error ? console.error(error) : console.log('README generated successfully!');
     });
 }
 
