@@ -1,6 +1,7 @@
 // Packages required for this application
 const inquirer = require('inquirer');
-const fs = require("fs");
+const generateMarkdown = require('./utils/generateMarkdown');
+const fs = require('fs');
 
 // An array of questions for user input
 const questions = [
@@ -14,7 +15,7 @@ const questions = [
         type: 'input',
         message: "What is the author's Github username?",
         name: 'username',
-        default: 'Author Name'
+        default: 'Author'
     },
     {
         type: 'input',
@@ -66,13 +67,17 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// Function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, generateMarkdown.generateMarkdown(data), (error) => {
+        error ? console.error(error) : console.log(data);
+    });
+}
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
     inquirer.prompt(questions).then((data) => {
-        console.log(data);
+        writeToFile("README.md.new", data);
     });
 }
 
