@@ -1,4 +1,5 @@
-const npmVersion = 'v8.2.4';
+// const npmVersion = 'v8.2.4';
+const npmVersion = null;
 
 
 // <-- TITLE RENDERING -->
@@ -89,17 +90,23 @@ function renderTestsSection(testing) {
 
 // Function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
+  let npmBadge;
+  if (npmVersion) {
+    npmBadge = `![Static Badge](https://img.shields.io/badge/npm-${npmVersion}-blue) `;
+  } else {
+    npmBadge = '';
+  }
   switch (license) {
     case 'MIT':
-      return `![Static Badge](https://img.shields.io/badge/npm-${npmVersion}-blue) ![Static Badge](https://img.shields.io/badge/License-${license}-yellow)`;
+      return `${npmBadge}![Static Badge](https://img.shields.io/badge/License-${license}-yellow)`;
     case 'CC':
-      return `![Static Badge](https://img.shields.io/badge/npm-${npmVersion}-blue) ![Static Badge](https://img.shields.io/badge/License-${license}-lightgrey)`;
+      return `${npmBadge}![Static Badge](https://img.shields.io/badge/License-${license}-lightgrey)`;
     case 'GPL':
-      return `![Static Badge](https://img.shields.io/badge/npm-${npmVersion}-blue) ![Static Badge](https://img.shields.io/badge/License-${license}-blue)`;
+      return `${npmBadge}![Static Badge](https://img.shields.io/badge/License-${license}-blue)`;
     case 'LGPL':
-      return `![Static Badge](https://img.shields.io/badge/npm-${npmVersion}-blue) ![Static Badge](https://img.shields.io/badge/License-${license}-blue)`;
+      return `${npmBadge}![Static Badge](https://img.shields.io/badge/License-${license}-blue)`;
     default:
-      return `![Static Badge](https://img.shields.io/badge/npm-${npmVersion}-blue)`;
+      return `${npmBadge}`;
   }
 }
 
