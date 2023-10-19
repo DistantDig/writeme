@@ -1,18 +1,50 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+const npmVersion = 'v8.2.4';
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+// Function that returns a license badge based on which license is passed in
+function renderLicenseBadge(license) {
+  switch (license) {
+    case 'MIT':
+      return `![Static Badge](https://img.shields.io/badge/npm-${npmVersion}-blue) ![Static Badge](https://img.shields.io/badge/License-${license}-yellow)`;
+    case 'CC':
+      return `![Static Badge](https://img.shields.io/badge/npm-${npmVersion}-blue) ![Static Badge](https://img.shields.io/badge/License-${license}-lightgrey)`;
+    case 'GPL':
+      return `![Static Badge](https://img.shields.io/badge/npm-${npmVersion}-blue) ![Static Badge](https://img.shields.io/badge/License-${license}-blue)`;
+    case 'LGPL':
+      return `![Static Badge](https://img.shields.io/badge/npm-${npmVersion}-blue) ![Static Badge](https://img.shields.io/badge/License-${license}-blue)`;
+    default:
+      return `![Static Badge](https://img.shields.io/badge/npm-${npmVersion}-blue)`;
+  }
+}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+// Function that returns the license link
+function renderLicenseLink(license) {
+  switch (license) {
+    case 'MIT':
+      return `https://opensource.org/licenses/MIT`;
+    case 'CC':
+      return `http://creativecommons.org/publicdomain/zero/1.0/`;
+    case 'GPL':
+      return `https://www.gnu.org/licenses/gpl-3.0`;
+    case 'LGPL':
+      return `https://www.gnu.org/licenses/lgpl-3.0`;
+    default:
+      return ``;
+  }
+}
 
-// TODO: Create a function to generate markdown for README
+// Function that returns the license section of README
+function renderLicenseSection(license) {
+  return `## License
+
+  This project is covered under the ${data.license} license. The full documentation on this license can be found [here](${renderLicenseLink(data.license)})
+  
+  `
+}
+
+// Function to generate markdown for README
 function generateMarkdown(data) {
-  return `![Static Badge](https://img.shields.io/badge/License-${data.license}-green)
+  const markdown = 
+  `${renderLicenseBadge(data.license)}
 
 # ${data.title}
 
@@ -41,10 +73,6 @@ ${data.usage}
 
 This project was designed by ${data.username}. Thier Github profile can be found [here](https://github.com/${data.username}), and they can be reached via email at ${data.email}.
 
-## License
-
-${data.license}
-
 ## Contributing
 
 ${data.contributing}
@@ -54,6 +82,7 @@ ${data.contributing}
 ${data.testing}
 
 `;
+  return markdown;
 }
 
 module.exports = {generateMarkdown};
