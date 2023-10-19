@@ -1,9 +1,21 @@
 // Function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
-  if (license === 'No License') {
-    return `![Static Badge](https://img.shields.io/badge/npm-v8.2.4-blue)`;
-  } else {
-    return `![Static Badge](https://img.shields.io/badge/npm-v8.2.4-blue) ![Static Badge](https://img.shields.io/badge/License-${license}-green)`;
+  // if (license === 'No License') {
+  //   return `![Static Badge](https://img.shields.io/badge/npm-v8.2.4-blue)`;
+  // } else {
+  //   return `![Static Badge](https://img.shields.io/badge/npm-v8.2.4-blue) ![Static Badge](https://img.shields.io/badge/License-${license}-green)`;
+  // }
+  switch (license) {
+    case 'MIT':
+      return `![Static Badge](https://img.shields.io/badge/npm-v8.2.4-blue) ![Static Badge](https://img.shields.io/badge/License-${license}-yellow)`;
+    case 'CC':
+      return `![Static Badge](https://img.shields.io/badge/npm-v8.2.4-blue) ![Static Badge](https://img.shields.io/badge/License-${license}-lightgrey)`;
+    case 'GPL':
+      return `![Static Badge](https://img.shields.io/badge/npm-v8.2.4-blue) ![Static Badge](https://img.shields.io/badge/License-${license}-blue)`;
+    case 'LGPL':
+      return `![Static Badge](https://img.shields.io/badge/npm-v8.2.4-blue) ![Static Badge](https://img.shields.io/badge/License-${license}-blue)`;
+    default:
+      return `![Static Badge](https://img.shields.io/badge/npm-v8.2.4-blue)`;
   }
 }
 
