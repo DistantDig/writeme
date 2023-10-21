@@ -62,7 +62,7 @@ function renderUsageSection(usage) {
 function renderCreditsSection(username, email) {
   return `## Credits
 
-  This project was designed by ${username}. Thier Github profile can be found [here](https://github.com/${username}), and they can be reached via email at ${email}.`;
+  This project was designed by ${username}. Their Github profile can be found [here](https://github.com/${username}), and they can be reached via email at ${email}.`;
 }
 
 
