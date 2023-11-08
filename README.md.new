@@ -1,10 +1,10 @@
 ![Static Badge](https://img.shields.io/badge/License-MIT-yellow)
 
-  # Logo Generator
+  # Tech Blog
 
   ## Description
 
-  This project is designed to generate a logo based on user inputs. The user executes a command in their terminal and is promptd with a series of questions that will then determined the end result of their logo.
+  This application is a blog website that allows a user to have a blog and display it for every other user to view. The homepage displays all of the blogs stored on the website, and clicking on one of the blogs will then render a page of that blog, its contents and all of the associated comments.
 
   ## Table of Contents
 
@@ -17,11 +17,11 @@
 
   ## Installation
 
-  To use this project, the user must clone the repository down to their local machine from the Github repo. From there, the user must ensure they have navigated to the source folder of the project. Once in the source folder, type 'npm i' to install all of the needed dependancies.
+  To install this project on you local machine, clone the repository to you local machine via your terminal. Once the repo has been cloned, run 'npm i' to install all of the needed dependancies. Once that is finished, rename the '.env.EXAMPLE' file to simply '.env' and enter your user name and password withing that file. After saving the file the user should be able to run 'npm start' in their terminal to get the server to launch. If the user would like to seed the database with the defaults, stop the server, run 'npm run seed' in their terminal and restart the server again to have the changes take effect. 
 
   ## Usage
 
-  Once the application has been installed properly, the user can then navigate to the source folder of the project and run the command 'node index.js' to begin the question prompts. The user can then answer each of the questions that will then determine their final logo. Once all of the questions have been answered, a  new filed named 'logo.svg' will generate in the folder. This will be the user's logo file.
+  To use this project, wither navigate to https://guarded-dusk-88111-632c3c8be657.herokuapp.com/ for the officially deployed link, or if you installed the application on your own then navigate to http://localhost:3001/.
 
   ## Credits
 
@@ -33,9 +33,9 @@
 
   ## Contributing
 
-  If you would like to contribute please feel free to fork the project, make improvements, and open a pull request on the source repo. I'm always happy to see other people's ideas and grow in my own skills through reverse engineering.
+  https://www.contributor-covenant.org/
 
   ## Tests
 
-  If you are interested in testing my project, feel free to run tests in the console throug the jest dependancy. The user can input npm test and it will run a test for each of the shape renderings. If you are interested in adding more tests then feel free to fork the project and make pull requests.
+  No automatic methods of testing are included in this project, however feel free to fork the project and add some! Otherwise feel free to just experiment with the project and create issues for any odd behavior.
 
